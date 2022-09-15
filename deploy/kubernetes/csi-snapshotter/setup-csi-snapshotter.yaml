@@ -72,7 +72,7 @@ spec:
       serviceAccountName: csi-snapshotter
       containers:
         - name: csi-provisioner
-          image: registry.k8s.io/sig-storage/csi-provisioner:v3.2.1
+          image: registry.cn-shanghai.aliyuncs.com/rainbow954/csi-provisioner:canary
           args:
             - "--v=5"
             - "--csi-address=$(ADDRESS)"
@@ -84,7 +84,7 @@ spec:
             - name: socket-dir
               mountPath: /csi
         - name: csi-snapshotter
-          image: registry.k8s.io/sig-storage/csi-snapshotter:v6.0.1
+          image: registry.cn-shanghai.aliyuncs.com/rainbow954/csi-snapshotter:canary
           args:
             - "--v=5"
             - "--csi-address=$(ADDRESS)"
@@ -97,7 +97,7 @@ spec:
             - name: socket-dir
               mountPath: /csi
         - name: hostpath
-          image: registry.k8s.io/sig-storage/hostpathplugin:v1.9.0
+          image: registry.cn-shanghai.aliyuncs.com/rainbow954/hostpathplugin:canary
           args:
             - "--v=5"
             - "--endpoint=$(CSI_ENDPOINT)"
